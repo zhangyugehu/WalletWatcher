@@ -1,21 +1,24 @@
 package com.zhangyugehu.walletwatcher;
 
-import android.app.Activity;
-import android.support.v4.app.Fragment;
 
-public class Text extends Activity implements Runnable{
+import java.util.ArrayList;
+import java.util.List;
 
-    private void fun1(){
-
-        setClazz(Fragment.class);
-    }
-
-    private void setClazz(Class<? extends Fragment> f){
+public class Text {
+    interface BaseView{
 
     }
 
-    @Override
-    public void run() {
+    static class AView implements BaseView{
 
     }
+
+    static abstract class BasePresenter<V extends BaseView>{
+        V view;
+    }
+
+    static class APresenter extends BasePresenter<AView>{
+
+    }
+
 }
